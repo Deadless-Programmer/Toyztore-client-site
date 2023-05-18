@@ -11,28 +11,28 @@ const PopularProduct = () => {
   return (
     <div>
       <section className="py-6 dark:bg-gray-800 dark:text-gray-100">
-        <div className="container p-4 mx-auto space-y-16 sm:p-10">
+        <div className=" p-4 mx-auto space-y-16 sm:p-10">
           <div className="space-y-4 text-center">
             <h3 className="text-2xl font-bold leading-none sm:text-5xl">
               Most <span className="text-fuchsia-600 ">Popular Toys</span>
             </h3>
-            <p className=" dark:text-gray-400 h-20 overflow-y-auto">
+            <p className=" dark:text-gray-400 ">
               Explore our bestseller, celebrated for its exceptional quality and
               unrivaled demand. <br /> Join the ranks of countless satisfied
               customers who have made it their top choice <br /> for
               unparalleled enjoyment and satisfaction.
             </p>
           </div>
-          <div className="grid w-full grid-cols-1 gap-x-6 gap-y-6  sm:grid-cols-2 lg:grid-cols-4">
-            <div className="max-w-xs p-6 rounded-md shadow-md bg-fuchsia-100">
+          <div className="grid w-full grid-cols-1 gap-x-6 gap-y-6 mx-auto  sm:grid-cols-2 lg:grid-cols-4">
+            <div className=" p-6 flex flex-col justify-center rounded-md shadow-md bg-fuchsia-100">
               <img
                 src={img1}
                 alt=""
-                className="object-cover object-center  rounded-md  dark:bg-gray-500"
+                className="  rounded-md  dark:bg-gray-500"
               />
               <div className="mt-6 mb-2">
                 <h2 className="text-xl font-semibold tracking-wide">
-                  Ragdoll Cat
+                  Ragdoll Toy
                 </h2>
               </div>
               <p className="dark:text-gray-100 h-20 overflow-y-auto">
@@ -42,7 +42,7 @@ const PopularProduct = () => {
               </p>
               <p className="mt-8 font-semibold">Price : $60</p>
             </div>
-            <div className="max-w-xs p-6 rounded-md shadow-md bg-fuchsia-100">
+            <div className="p-6 flex flex-col justify-center rounded-md shadow-md bg-fuchsia-100">
               <img
                 src={img2}
                 alt=""
@@ -50,7 +50,7 @@ const PopularProduct = () => {
               />
               <div className="mt-6 mb-2">
                 <h2 className="text-xl font-semibold tracking-wide">
-                  The Frog
+                  The Frog Toy
                 </h2>
               </div>
               <p className="dark:text-gray-100 h-20 overflow-y-auto">
@@ -61,7 +61,7 @@ const PopularProduct = () => {
               </p>
               <p className="mt-8 font-semibold">Price : $80</p>
             </div>
-            <div className="max-w-xs p-6 rounded-md shadow-md bg-fuchsia-100">
+            <div className=" p-6 flex flex-col justify-center  rounded-md shadow-md bg-fuchsia-100">
               <img
                 src={img3}
                 alt=""
@@ -69,7 +69,7 @@ const PopularProduct = () => {
               />
               <div className="mt-6 mb-2">
                 <h2 className="text-xl font-semibold tracking-wide">
-                  Persian Cat
+                  Persian Toy
                 </h2>
               </div>
               <p className="dark:text-gray-100 h-20 overflow-y-auto">
@@ -79,7 +79,7 @@ const PopularProduct = () => {
               </p>
               <p className="mt-8 font-semibold">Price : $70</p>
             </div>
-            <div className="max-w-xs p-6 rounded-md shadow-md bg-fuchsia-100">
+            <div className=" p-6 flex flex-col justify-center rounded-md shadow-md bg-fuchsia-100">
               <img
                 src={img8}
                 alt=""
@@ -87,7 +87,7 @@ const PopularProduct = () => {
               />
               <div className="mt-6 mb-2">
                 <h2 className="text-xl font-semibold tracking-wide">
-                  The Apollo
+                  The Apollo Toy
                 </h2>
               </div>
               <p className="dark:text-gray-100 h-20 overflow-y-auto">
@@ -97,7 +97,7 @@ const PopularProduct = () => {
               </p>
               <p className="mt-8 font-semibold">Price : $90</p>
             </div>
-            <div className="max-w-xs p-6 rounded-md shadow-md bg-fuchsia-100">
+            <div className=" p-6 flex flex-col justify-center rounded-md shadow-md bg-fuchsia-100">
               <img
                 src={img6}
                 alt=""
@@ -105,7 +105,7 @@ const PopularProduct = () => {
               />
               <div className="mt-6 mb-2">
                 <h2 className="text-xl font-semibold tracking-wide">
-                  The Crocodile
+                  Crocodile Toy
                 </h2>
               </div>
               <p className="dark:text-gray-100 h-20 overflow-y-auto">
@@ -115,7 +115,7 @@ const PopularProduct = () => {
               </p>
               <p className="mt-8 font-semibold">Price : $75</p>
             </div>
-            <div className="max-w-xs p-6 rounded-md shadow-md bg-fuchsia-100">
+            <div className=" p-6 flex flex-col justify-center rounded-md shadow-md bg-fuchsia-100">
               <img
                 src={img7}
                 alt=""
@@ -131,7 +131,7 @@ const PopularProduct = () => {
               </p>
               <p className="mt-8 font-semibold">Price : $65</p>
             </div>
-            <div className="max-w-xs p-6 rounded-md shadow-md bg-fuchsia-100">
+            <div className=" p-6 flex flex-col justify-center rounded-md shadow-md bg-fuchsia-100">
               <img
                 src={img9}
                 alt=""
@@ -139,7 +139,7 @@ const PopularProduct = () => {
               />
               <div className="mt-6 mb-2">
                 <h2 className="text-xl font-semibold tracking-wide">
-                  The Octopus
+                  Octopus Toy
                 </h2>
               </div>
               <p className="dark:text-gray-100 h-20 overflow-y-auto">
@@ -150,7 +150,7 @@ const PopularProduct = () => {
               <p className="mt-8 font-semibold">Price : $50</p>
             </div>
 
-            <div className="max-w-xs p-6 rounded-md shadow-md bg-fuchsia-100">
+            <div className=" p-6 flex flex-col justify-center rounded-md shadow-md bg-fuchsia-100">
               <img
                 src={img4}
                 alt=""
@@ -158,7 +158,7 @@ const PopularProduct = () => {
               />
               <div className="mt-6 mb-2">
                 <h2 className="text-xl font-semibold tracking-wide">
-                  The Comet
+                  The Comet Toy
                 </h2>
               </div>
               <p className="dark:text-gray-100 h-20 overflow-y-auto">
