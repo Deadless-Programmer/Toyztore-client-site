@@ -31,7 +31,7 @@ const PopularProduct = () => {
                 className="  rounded-md  dark:bg-gray-500"
               />
               <div className="mt-6 mb-2">
-                <h2 className="text-xl font-semibold tracking-wide">
+                <h2 className="text-xl font-semibold text-fuchsia-700">
                   Ragdoll Toy
                 </h2>
               </div>
@@ -49,7 +49,7 @@ const PopularProduct = () => {
                 className="object-cover object-center  rounded-md  dark:bg-gray-500"
               />
               <div className="mt-6 mb-2">
-                <h2 className="text-xl font-semibold tracking-wide">
+                <h2 className="text-xl font-semibold text-fuchsia-700">
                   The Frog Toy
                 </h2>
               </div>
@@ -68,7 +68,7 @@ const PopularProduct = () => {
                 className="object-cover object-center  rounded-md  dark:bg-gray-500"
               />
               <div className="mt-6 mb-2">
-                <h2 className="text-xl font-semibold tracking-wide">
+                <h2 className="text-xl font-semibold text-fuchsia-700">
                   Persian Toy
                 </h2>
               </div>
@@ -86,7 +86,7 @@ const PopularProduct = () => {
                 className="object-cover object-center  rounded-md  dark:bg-gray-500"
               />
               <div className="mt-6 mb-2">
-                <h2 className="text-xl font-semibold tracking-wide">
+                <h2 className="text-xl font-semibold text-fuchsia-700">
                   The Apollo Toy
                 </h2>
               </div>
@@ -104,7 +104,7 @@ const PopularProduct = () => {
                 className="object-cover object-center  rounded-md  dark:bg-gray-500"
               />
               <div className="mt-6 mb-2">
-                <h2 className="text-xl font-semibold tracking-wide">
+                <h2 className="text-xl font-semibold text-fuchsia-700">
                   Crocodile Toy
                 </h2>
               </div>
@@ -122,7 +122,7 @@ const PopularProduct = () => {
                 className="object-cover object-center  rounded-md  dark:bg-gray-500"
               />
               <div className="mt-6 mb-2">
-                <h2 className="text-xl font-semibold tracking-wide">The Hen</h2>
+                <h2 className="text-xl font-semibold text-fuchsia-700">The Hen</h2>
               </div>
               <p className="dark:text-gray-100 h-20 overflow-y-auto">
                 Hens, the heart of the farm, provide fresh eggs and a touch of
@@ -138,7 +138,7 @@ const PopularProduct = () => {
                 className="object-cover object-center  rounded-md  dark:bg-gray-500"
               />
               <div className="mt-6 mb-2">
-                <h2 className="text-xl font-semibold tracking-wide">
+                <h2 className="text-xl font-semibold text-fuchsia-700">
                   Octopus Toy
                 </h2>
               </div>
@@ -157,7 +157,7 @@ const PopularProduct = () => {
                 className="object-cover object-center  rounded-md  dark:bg-gray-500"
               />
               <div className="mt-6 mb-2">
-                <h2 className="text-xl font-semibold tracking-wide">
+                <h2 className="text-xl font-semibold text-fuchsia-700">
                   The Comet Toy
                 </h2>
               </div>
