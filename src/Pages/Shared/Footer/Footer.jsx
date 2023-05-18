@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
             <div className="space-y-3">
               <h3 className="tracking-wide uppercase dark:text-gray-50">
-                Product
+                CATEGORIES
               </h3>
               <ul className="space-y-1">
                 <li>
@@ -38,12 +38,47 @@ const Footer = () => {
             </div>
             <div className="space-y-3">
               <h3 className="tracking-wide uppercase dark:text-gray-50">
-                Company
+                BRANDS
               </h3>
               <ul className="space-y-1">
                 <li>
                   <a rel="noopener noreferrer" href="#">
-                    Privacy
+                    ToyQuest
+                  </a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">
+                  PlayfulPals
+                  </a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">
+                    Funville
+                  </a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">
+                    Dreamland Toys
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="space-y-3">
+              <h3 className="uppercase dark:text-gray-50">ABOUT US</h3>
+              <ul className="space-y-1">
+                <li>
+                  <a rel="noopener noreferrer" href="#">
+                    Help Center
+                  </a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">
+                    Store Location
+                  </a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">
+                    Privacy Policy
                   </a>
                 </li>
                 <li>
@@ -54,27 +89,9 @@ const Footer = () => {
               </ul>
             </div>
             <div className="space-y-3">
-              <h3 className="uppercase dark:text-gray-50">Developers</h3>
-              <ul className="space-y-1">
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Public API
-                  </a>
-                </li>
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Documentation
-                  </a>
-                </li>
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Guides
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-3">
-              <div className="uppercase dark:text-gray-50">Social media</div>
+              <div className="uppercase dark:text-gray-50">
+                Digital networking platforms
+              </div>
               <div className="flex justify-start space-x-3">
                 <a
                   rel="noopener noreferrer"
