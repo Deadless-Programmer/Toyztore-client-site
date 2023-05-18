@@ -1,5 +1,5 @@
 import React from "react";
-
+import bg from "../../assets/gallary/bg.png"
 const Banner = () => {
   return (
     <div>
@@ -8,6 +8,9 @@ const Banner = () => {
         style={{
           backgroundImage: `url("https://images.pexels.com/photos/3933025/pexels-photo-3933025.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")`,
         }}
+        // style={{
+        //   backgroundImage: `url("bg")`,
+        // }}
       >
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-center text-neutral-content">
