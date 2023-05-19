@@ -34,7 +34,7 @@ const Banner = () => {
             </p>
             <button
               data-aos="flip-left"
-              className="btn text-fuchsia-200 bg-fuchsia-600 border-0 hover:bg-cyan-600 "
+              className="btn text-fuchsia-200 bg-pink-600 border-0 hover:bg-green-600 "
             >
               Shop now!{" "}
             </button>

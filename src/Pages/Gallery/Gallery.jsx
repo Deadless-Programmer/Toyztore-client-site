@@ -10,7 +10,7 @@ const Gallery = () => {
     <div>
       <section className="text-center ">
         <h1 data-aos="fade-up" className="text-3xl font-bold mt-20 ">
-          " <span className="text-fuchsia-600">Toyland</span> Treasures Gallery"
+          " <span>Toyland</span> Treasures <span className="text-pink-600">Gallery</span> "
         </h1>
         <p data-aos="flip-left" className="mt-4">
           Step into our Toyland Treasures Gallery and explore a visual delight

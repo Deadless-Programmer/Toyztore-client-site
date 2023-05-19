@@ -17,7 +17,7 @@ const Navbar = () => {
   );
   return (
     <div>
-      <div className="navbar bg-fuchsia-100 drop-shadow-md">
+      <div className="navbar bg-lime-100 drop-shadow-md">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -46,8 +46,8 @@ const Navbar = () => {
           <div className=" flex items-center">
             <img className="w-20" src={logo} alt="" />
             <a className="btn btn-ghost normal-case text-3xl font-bold">
-              <span className="text-fuchsia-600">Toyz</span>{" "}
-              <span className="text-cyan-600">tore</span>
+              <span className="text-pink-600">Toyz</span>{" "}
+              <span className="text-green-600">tore</span>
             </a>
           </div>
         </div>

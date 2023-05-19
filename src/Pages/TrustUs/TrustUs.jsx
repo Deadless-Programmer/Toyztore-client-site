@@ -15,7 +15,7 @@ const TrustUs = () => {
               <div  className="text-center sm:text-left mb-14 before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:dark:bg-violet-400">
                 <h3 data-aos="fade-up" className="text-3xl font-semibold">
                   Why Rely on{" "}
-                  <span className="text-fuchsia-600">Our Expertise</span>{" "}
+                  <span className="text-pink-600">Our Expertise</span>{" "}
                 </h3>
                 <p className="  mt-4" data-aos="fade-up">
                   Establishing Trust with Expertise: With a solid foundation
@@ -30,7 +30,7 @@ const TrustUs = () => {
             <div className="relative col-span-12 px-4 space-y-6 sm:col-span-9">
               <div className="col-span-12 space-y-12 relative px-4 sm:col-span-8 sm:space-y-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-0.5 sm:before:-left-3 before:dark:bg-gray-700">
                 <div data-aos="fade-up" className="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-violet-400">
-                  <h3 className="text-xl font-semibold text-fuchsia-600 ">
+                  <h3 className="text-xl font-semibold text-pink-600 ">
                     Unmatched Quality
                   </h3>
 
@@ -42,7 +42,7 @@ const TrustUs = () => {
                   </p>
                 </div>
                 <div data-aos="zoom-in"className="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-violet-400">
-                  <h3 className="text-xl font-semibold text-fuchsia-600 ">
+                  <h3 className="text-xl font-semibold text-pink-600 ">
                     Educational Value
                   </h3>
 
@@ -54,7 +54,7 @@ const TrustUs = () => {
                   </p>
                 </div>
                 <div data-aos="flip-left" className="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-violet-400">
-                  <h3 className="text-xl font-semibold text-fuchsia-600 ">
+                  <h3 className="text-xl font-semibold text-pink-600 ">
                     Customer Satisfaction
                   </h3>
 
