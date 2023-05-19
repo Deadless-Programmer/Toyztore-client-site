@@ -13,7 +13,7 @@ const PopularProduct = () => {
       <section className="py-6 dark:bg-gray-800 dark:text-gray-100">
         <div className=" p-4 mx-auto space-y-16 sm:p-10">
           <div className="space-y-4 text-center">
-            <h3 className="text-2xl font-bold leading-none sm:text-5xl">
+            <h3 className="text-2xl font-bold leading-none sm:text-3xl">
               Most <span className="text-fuchsia-600 ">Popular Toys</span>
             </h3>
             <p className=" dark:text-gray-400 ">
