@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../../../assets/onlyLogo.png";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 const Navbar = () => {
+  const {user, logOut }=useContext(AuthContext);
+  const hadleLogOut =()=>{
+    logOut()
+    .then(()=>{
+
+    })
+    .catch(error=>console.log(error))
+  }
   const navItems = (
     <>
       <li className="font-medium">
@@ -13,6 +22,17 @@ const Navbar = () => {
       <li className="font-medium">
         <Link to="/blogs">Blogs</Link>
       </li>
+      {user?.email ? <> <li className="font-medium">
+        <Link to="/myToys">My Toys</Link>
+      </li>
+      <li className="font-medium">
+        <Link to="/addAtoys">Add A Toy</Link>
+      </li>
+      <li className="font-medium">
+        <button onClick={hadleLogOut} >Log Out</button>
+      </li> </> :<li className="font-medium">
+        <Link to="/login">Login</Link>
+      </li> }
     </>
   );
   return (
