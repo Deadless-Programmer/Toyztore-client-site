@@ -7,16 +7,22 @@ import img6 from "../../../assets/gallary/image6.jpg";
 import img7 from "../../../assets/gallary/image7.jpg";
 import img8 from "../../../assets/gallary/image8.jpg";
 import img9 from "../../../assets/gallary/image9.jpg";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const PopularProduct = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div>
       <section className="py-6 dark:bg-gray-800 dark:text-gray-100">
         <div className=" p-4 mx-auto space-y-16 sm:p-10">
-          <div className="space-y-4 text-center">
-            <h3 className="text-2xl font-bold leading-none sm:text-3xl">
+          <div  className="space-y-4 text-center">
+            <h3 data-aos="fade-up" className="text-2xl font-bold leading-none sm:text-3xl">
               Most <span className="text-fuchsia-600 ">Popular Toys</span>
             </h3>
-            <p className=" dark:text-gray-400 ">
+            <p data-aos="zoom-in" className=" dark:text-gray-400 ">
               Explore our bestseller, celebrated for its exceptional quality and
               unrivaled demand. <br /> Join the ranks of countless satisfied
               customers who have made it their top choice <br /> for
@@ -24,7 +30,7 @@ const PopularProduct = () => {
             </p>
           </div>
           <div className="grid w-full grid-cols-1 gap-x-6 gap-y-6 mx-auto  sm:grid-cols-2 lg:grid-cols-4">
-            <div className=" p-6 flex flex-col justify-center rounded-md shadow-md bg-fuchsia-100">
+            <div data-aos="fade-up" className=" p-6 flex flex-col justify-center rounded-md shadow-md bg-fuchsia-100">
               <img
                 src={img1}
                 alt=""
@@ -42,7 +48,7 @@ const PopularProduct = () => {
               </p>
               <p className="mt-8 font-semibold">Price : $60</p>
             </div>
-            <div className="p-6 flex flex-col justify-center rounded-md shadow-md bg-fuchsia-100">
+            <div data-aos="zoom-in" className="p-6 flex flex-col justify-center rounded-md shadow-md bg-fuchsia-100">
               <img
                 src={img2}
                 alt=""
@@ -61,7 +67,7 @@ const PopularProduct = () => {
               </p>
               <p className="mt-8 font-semibold">Price : $80</p>
             </div>
-            <div className=" p-6 flex flex-col justify-center  rounded-md shadow-md bg-fuchsia-100">
+            <div data-aos="flip-left" className=" p-6 flex flex-col justify-center  rounded-md shadow-md bg-fuchsia-100">
               <img
                 src={img3}
                 alt=""
@@ -79,7 +85,7 @@ const PopularProduct = () => {
               </p>
               <p className="mt-8 font-semibold">Price : $70</p>
             </div>
-            <div className=" p-6 flex flex-col justify-center rounded-md shadow-md bg-fuchsia-100">
+            <div data-aos="fade-up" className=" p-6 flex flex-col justify-center rounded-md shadow-md bg-fuchsia-100">
               <img
                 src={img8}
                 alt=""
@@ -97,7 +103,7 @@ const PopularProduct = () => {
               </p>
               <p className="mt-8 font-semibold">Price : $90</p>
             </div>
-            <div className=" p-6 flex flex-col justify-center rounded-md shadow-md bg-fuchsia-100">
+            <div data-aos="zoom-in" className=" p-6 flex flex-col justify-center rounded-md shadow-md bg-fuchsia-100">
               <img
                 src={img6}
                 alt=""
@@ -115,7 +121,7 @@ const PopularProduct = () => {
               </p>
               <p className="mt-8 font-semibold">Price : $75</p>
             </div>
-            <div className=" p-6 flex flex-col justify-center rounded-md shadow-md bg-fuchsia-100">
+            <div data-aos="flip-left" className=" p-6 flex flex-col justify-center rounded-md shadow-md bg-fuchsia-100">
               <img
                 src={img7}
                 alt=""
@@ -131,7 +137,7 @@ const PopularProduct = () => {
               </p>
               <p className="mt-8 font-semibold">Price : $65</p>
             </div>
-            <div className=" p-6 flex flex-col justify-center rounded-md shadow-md bg-fuchsia-100">
+            <div data-aos="fade-up" className=" p-6 flex flex-col justify-center rounded-md shadow-md bg-fuchsia-100">
               <img
                 src={img9}
                 alt=""
@@ -150,7 +156,7 @@ const PopularProduct = () => {
               <p className="mt-8 font-semibold">Price : $50</p>
             </div>
 
-            <div className=" p-6 flex flex-col justify-center rounded-md shadow-md bg-fuchsia-100">
+            <div data-aos="zoom-in" className=" p-6 flex flex-col justify-center rounded-md shadow-md bg-fuchsia-100">
               <img
                 src={img4}
                 alt=""
