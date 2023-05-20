@@ -10,6 +10,7 @@ import SignUp from "../Pages/SignUp/SignUp";
 import MyAllToys from "../Pages/MyAllToys/MyAllToys";
 import AddASingleToys from "../Pages/AddASingleToys/AddASingleToys";
 import PrivetRoute from "./PrivetRoute";
+import Details from "../Pages/AllToys/Details";
 
 
 const router = createBrowserRouter([
@@ -24,7 +25,8 @@ const router = createBrowserRouter([
             },
             {
                 path:"/allToys",
-                element:<AllToys></AllToys>
+                element:<AllToys></AllToys>,
+                loader: ()=> fetch("http://localhost:5000/signgleToys")
             },
             {
                 path:'/blogs',
@@ -45,6 +47,11 @@ const router = createBrowserRouter([
             {
                 path:'/addAtoys',
                 element:<PrivetRoute><AddASingleToys></AddASingleToys></PrivetRoute>
+            },
+            {
+                path:'/productDetails/:id',
+                element:<Details></Details>,
+                loader : ({params})=> fetch(`http://localhost:5000/signgleToys/${params.id}`)
             }
         ]
     }

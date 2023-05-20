@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Login = () => {
-  const {signIn }=useContext(AuthContext);
+  const {signIn, googleSignIn }=useContext(AuthContext);
   const location = useLocation();
   const navigete = useNavigate();
   const from = location.state?.from?.pathname || '/';
@@ -21,6 +21,21 @@ const Login = () => {
           navigete(from, {replace:true})
         })
         .catch(error=> console.log(error));
+
+
+    }
+
+    const googleSignHandler =()=>{
+      googleSignIn()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        
+        navigete(from, { replace: true });
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
     }
   return (
     <div className="py-8">
@@ -39,7 +54,7 @@ const Login = () => {
           </Link>
         </p>
         <div className="my-6 space-y-4">
-          <button
+          <button onClick={googleSignHandler}
             aria-label="Login with Google"
             type="button"
             className="flex items-center hover:text-white hover:bg-green-400  justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-400 focus:ring-violet-400"
