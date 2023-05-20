@@ -31,7 +31,7 @@ const Details = () => {
               <p className="mt-2 font-semibold">Seller email : {sellerEmail}</p>
               <p className="mt-2 font-semibold">Price : {Price}</p>
 
-              <p className="mt-2 font-semibold flex">
+              <p className="mt-2 font-semibold flex items-center gap-1">
                 Rating : {Rating} <HiStar className="text-orange-500"></HiStar>
               </p>
               <p className="mt-2 font-semibold ">Quantity : {Quantity}</p>
