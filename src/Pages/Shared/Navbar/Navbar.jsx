@@ -3,14 +3,12 @@ import logo from "../../../assets/onlyLogo.png";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 const Navbar = () => {
-  const {user, logOut }=useContext(AuthContext);
-  const hadleLogOut =()=>{
+  const { user, logOut } = useContext(AuthContext);
+  const hadleLogOut = () => {
     logOut()
-    .then(()=>{
-
-    })
-    .catch(error=>console.log(error))
-  }
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
   const navItems = (
     <>
       <li className="font-medium">
@@ -22,17 +20,33 @@ const Navbar = () => {
       <li className="font-medium">
         <Link to="/blogs">Blogs</Link>
       </li>
-      {user?.email ? <> <li className="font-medium">
-        <Link to="/myToys">My Toys</Link>
-      </li>
-      <li className="font-medium">
-        <Link to="/addAtoys">Add A Toy</Link>
-      </li>
-      <li className="font-medium">
-        <button onClick={hadleLogOut} >Log Out</button>
-      </li> </> :<li className="font-medium">
-        <Link to="/login">Login</Link>
-      </li> }
+      {user?.email ? (
+        <>
+          <li className="font-medium">
+            <Link to="/myToys">My Toys</Link>
+          </li>
+          <li className="font-medium">
+            <Link to="/addAtoys">Add A Toy</Link>
+          </li>
+          <div>
+            <label
+              className=" avatar tooltip tooltip-bottom tooltip-success"
+              data-tip={user?.displayName}
+            >
+              <div className="w-10 rounded-full ">
+                <img src={user?.photoURL} />
+              </div>
+            </label>
+          </div>
+          <li className="font-medium">
+            <button onClick={hadleLogOut}>Log Out</button>
+          </li>{" "}
+        </>
+      ) : (
+        <li className="font-medium">
+          <Link to="/login">Login</Link>
+        </li>
+      )}
     </>
   );
   return (
@@ -75,7 +89,7 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{navItems}</ul>
         </div>
         <div className="navbar-end">
-          <button className="btn btn-ghost btn-circle">
+          {/* <button className="btn btn-ghost btn-circle">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -90,7 +104,13 @@ const Navbar = () => {
                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
               />
             </svg>
-          </button>
+          </button> */}
+
+          {/* {user &&  <label className=" avatar tooltip tooltip-bottom tooltip-success" data-tip={user?.displayName} >
+           <div className="w-10 rounded-full " >
+               <img src={user?.photoURL} />
+           </div>
+       </label>} */}
         </div>
       </div>
     </div>
