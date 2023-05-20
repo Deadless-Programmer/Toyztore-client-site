@@ -11,6 +11,7 @@ import MyAllToys from "../Pages/MyAllToys/MyAllToys";
 import AddASingleToys from "../Pages/AddASingleToys/AddASingleToys";
 import PrivetRoute from "./PrivetRoute";
 import Details from "../Pages/AllToys/Details";
+import UpdateToy from "../Pages/MyAllToys/UpdateToy";
 
 
 const router = createBrowserRouter([
@@ -51,6 +52,11 @@ const router = createBrowserRouter([
             {
                 path:'/productDetails/:id',
                 element: <PrivetRoute><Details></Details></PrivetRoute> ,
+                loader : ({params})=> fetch(`http://localhost:5000/signgleToys/${params.id}`)
+            },
+            {
+                path:'/updateToy/:id',
+                element:<UpdateToy></UpdateToy>,
                 loader : ({params})=> fetch(`http://localhost:5000/signgleToys/${params.id}`)
             }
         ]

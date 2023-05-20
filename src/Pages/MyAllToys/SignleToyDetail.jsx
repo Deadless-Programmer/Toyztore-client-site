@@ -1,5 +1,7 @@
 import React from "react";
 import { HiStar } from "react-icons/hi";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 const SignleToyDetail = ({ SingleData }) => {
   const {
     _id,
@@ -13,11 +15,43 @@ const SignleToyDetail = ({ SingleData }) => {
     Quantity,
     Description,
   } = SingleData;
+
+
+  const handleDelete = id=>{
+      console.log(id)
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          
+          fetch(`http://localhost:5000/signgleToys/${id}`,{
+            method:"DELETE"
+          })
+          .then(res=>res.json())
+          .then(data=>{
+            console.log(data)
+            if(data.deletedCount >0){
+              Swal.fire(
+            'Deleted!',
+            'Your toy has been deleted.',
+            'success'
+          )
+            }
+          })
+        }
+      })
+  }
   return (
     <tr>
       {/* <th>1</th>  */}
       <td>
-        <button className="  hover:bg-green-400 bg-pink-600 p-2 rounded-3xl">
+        <button onClick={()=>handleDelete(_id)} className="  hover:bg-green-400 bg-pink-600 p-2 rounded-3xl">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6 text-white"
@@ -51,9 +85,9 @@ const SignleToyDetail = ({ SingleData }) => {
         <p className="w-40  overflow-auto">{Description}</p>{" "}
       </td>
       <td>
-        <button className="bg-pink-500 border-0 hover:bg-green-600 p-2 rounded-sm text-white">
-          View Details
-        </button>
+        <Link to={`/updateToy/${_id}`}><button className="bg-pink-500 border-0 hover:bg-green-600 p-2 rounded-sm text-white">
+          Update
+        </button></Link>
       </td>
     </tr>
   );

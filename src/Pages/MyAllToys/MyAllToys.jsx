@@ -12,7 +12,7 @@ const MyAllToys = () => {
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
-
+  
   console.log(data);
   return (
     <div className="overflow-x-auto min-h-[calc(100vh-228px)]">
