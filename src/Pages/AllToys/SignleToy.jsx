@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const SignleToy = ({ data }) => {
   console.log(data);
-  const { _id, sellerName, Price, Quantity,,SubCategory,toyName  } = data;
+  const { _id, sellerName, Price, Quantity,SubCategory,toyName  } = data;
   console.log(_id)
   return (
     <tr>
