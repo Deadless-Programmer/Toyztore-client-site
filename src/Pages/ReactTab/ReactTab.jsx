@@ -34,7 +34,7 @@ const ReactTab = () => {
           and enjoyable.
         </p>
       </div>
-      <Tabs className="text-center mt-8 ">
+      <Tabs className="text-center   mt-8 ">
         <TabList classID="">
           <Tab onClick={() => setCategoryTitle("cat")}>Cat Toys</Tab>
           <Tab onClick={() => setCategoryTitle("horse")}>Horse Toys</Tab>
@@ -42,13 +42,13 @@ const ReactTab = () => {
         </TabList>
 
         <div className="mx-auto">
-          <TabPanel>
-            <div data-aos="fade-up" className=" md:flex justify-center gap-5">
+        <TabPanel className="">
+            <div data-aos="fade-up" className=" md:flex justify-center gap-5 ">
               {category.map((cData) => (
-                <div className="card  card-compact w-80 md:96 mt-5 bg-orange-200 shadow-xl">
-                  <figure className="h-56">
+                <div className="card border  card-compact w-full md:w-80 md:96 mt-5  bg-orange-200 shadow-xl">
+                  <figure className="h-56 mt-8 md:mt-0">
                     <img
-                      className="h-64 border w-full"
+                      className="h-64  w-80 md:w-full"
                       src={cData.picture}
                       alt="Shoes"
                     />
@@ -79,13 +79,13 @@ const ReactTab = () => {
               ))}
             </div>
           </TabPanel>
-          <TabPanel>
-            <div data-aos="fade-up" className=" md:flex justify-center gap-5">
+          <TabPanel className="">
+            <div data-aos="fade-up" className=" md:flex justify-center gap-5 ">
               {category.map((cData) => (
-                <div className="card  card-compact w-80 md:96 mt-5 bg-orange-200 shadow-xl">
-                  <figure className="h-56">
+                <div className="card border  card-compact w-full md:w-80 md:96 mt-5  bg-orange-200 shadow-xl">
+                  <figure className="h-56 mt-8 md:mt-0">
                     <img
-                      className="h-64 border w-full"
+                      className="h-64  w-80 md:w-full"
                       src={cData.picture}
                       alt="Shoes"
                     />
@@ -116,13 +116,13 @@ const ReactTab = () => {
               ))}
             </div>
           </TabPanel>
-          <TabPanel>
-            <div data-aos="fade-up" className=" md:flex justify-center gap-5">
+          <TabPanel className="">
+            <div data-aos="fade-up" className=" md:flex justify-center gap-5 ">
               {category.map((cData) => (
-                <div className="card  card-compact w-80 md:96 mt-5 bg-orange-200 shadow-xl">
-                  <figure className="h-56">
+                <div className="card border  card-compact w-full md:w-80 md:96 mt-5  bg-orange-200 shadow-xl">
+                  <figure className="h-56 mt-8 md:mt-0">
                     <img
-                      className="h-64 border w-full"
+                      className="h-64  w-80 md:w-full"
                       src={cData.picture}
                       alt="Shoes"
                     />
@@ -131,7 +131,6 @@ const ReactTab = () => {
                     <h2 className="card-title"> Name: {cData.toyName}</h2>
                     <div className="flex justify-between">
                       <p className="font-semibold"> Price : {cData.Price}</p>
-                      <div className="">
                       <p className="font-semibold ml-20 flex flex-col items-center">
                         {" "}
                         Rating{" "}
@@ -141,7 +140,6 @@ const ReactTab = () => {
                           readOnly
                         />
                       </p>
-                      </div>
                     </div>
                     <div className="card-actions justify-center">
                       <Link to={`/productDetails/${cData._id}`}>
