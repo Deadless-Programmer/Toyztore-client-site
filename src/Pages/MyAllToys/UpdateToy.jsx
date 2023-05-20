@@ -48,7 +48,10 @@ const UpdateToy = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        toast("Info Successfully Updated");
+        if(data.modifiedCount>0){
+            toast("Info Successfully Updated");
+        }
+       
       });
   };
   return (

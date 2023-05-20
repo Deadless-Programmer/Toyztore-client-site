@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import SignleToyDetail from "./SignleToyDetail";
+import Swal from "sweetalert2";
 
 const MyAllToys = () => {
   const { user } = useContext(AuthContext);
   const [data, setData] = useState([]);
+ 
   const url = `http://localhost:5000/signgleToys?email=${user?.email}`;
 
   useEffect(() => {
@@ -12,8 +14,42 @@ const MyAllToys = () => {
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
-  
-  console.log(data);
+  const handleDelete = id=>{
+    console.log(id)
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        
+        fetch(`http://localhost:5000/signgleToys/${id}`,{
+          method:"DELETE"
+        })
+        .then(res=>res.json())
+        .then(data=>{
+          console.log(data)
+          if(data.deletedCount >0){
+            Swal.fire(
+          'Deleted!',
+          'Your toy has been deleted.',
+          'success'
+        ) ; 
+        
+          }
+          
+        })
+        const remaining = data.filter(toy=>toy._id !==id);
+        setData(remaining);
+      }
+    })
+}
+
+ 
   return (
     <div className="overflow-x-auto min-h-[calc(100vh-228px)]">
       <h1 className="text-2xl text-center my-10 font-bold">
@@ -68,6 +104,7 @@ const MyAllToys = () => {
             <SignleToyDetail
               key={SingleData._id}
               SingleData={SingleData}
+              handleDelete={handleDelete}
             ></SignleToyDetail>
           ))}
         </tbody>
