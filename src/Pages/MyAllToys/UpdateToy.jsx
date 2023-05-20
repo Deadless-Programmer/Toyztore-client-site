@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
+import setTitleName from "../hoooks/hooks";
 // import { ToastContainer, toast } from "react-toastify";
 const UpdateToy = () => {
   const { user } = useContext(AuthContext);
@@ -39,7 +40,7 @@ const UpdateToy = () => {
     };
     console.log(newToys);
 
-    fetch(`http://localhost:5000/signgleToys/${_id}`, {
+    fetch(`https://toyztore-server.vercel.app/signgleToys/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -49,18 +50,18 @@ const UpdateToy = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if(data.modifiedCount>0){
-            Swal.fire({
-                // position: 'top-end',
-                icon: 'success',
-                title: 'Your Info Successfully Update',
-                showConfirmButton: 'Cool',
-                timer: 1500
-              })
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            // position: 'top-end',
+            icon: "success",
+            title: "Your Info Successfully Update",
+            showConfirmButton: "Cool",
+            timer: 1500,
+          });
         }
-       
       });
   };
+  setTitleName('update')
   return (
     <div>
       <form onSubmit={toysHandler} className=" h-auto bg-base-200 mb-5  p-4 ">
@@ -72,7 +73,7 @@ const UpdateToy = () => {
               </label>
               <input
                 type="text"
-                required
+                
                 defaultValue={Price}
                 name="Price"
                 placeholder="$ Price"
@@ -85,7 +86,7 @@ const UpdateToy = () => {
               </label>
               <input
                 type="text"
-                required
+              
                 defaultValue={Quantity}
                 name="Quantity"
                 placeholder="Available Quantity"
@@ -101,7 +102,7 @@ const UpdateToy = () => {
             </label>
             <textarea
               id="bio"
-              required
+              
               name="Description"
               placeholder=""
               className="w-[600px] rounded-lg border-2 h-24  focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900"

@@ -10,10 +10,13 @@ import img9 from "../../../assets/gallary/image9.jpg";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import setTitleName from "../../hoooks/hooks";
 const PopularProduct = () => {
   useEffect(() => {
     AOS.init();
   }, []);
+
+  setTitleName('PopularProduct')
   return (
     <div>
       <section className="py-6 dark:bg-gray-800 dark:text-gray-100">

@@ -3,6 +3,7 @@ import { AuthContext } from "../providers/AuthProvider";
 // import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2";
+import setTitleName from "../hoooks/hooks";
 const AddASingleToys = () => {
   const { user } = useContext(AuthContext);
   const toysHandler = (event) => {
@@ -38,12 +39,11 @@ const AddASingleToys = () => {
       Price,
       Rating,
       Quantity,
-      Description
-      
+      Description,
     };
     console.log(newToys);
 
-    fetch("http://localhost:5000/signgleToys", {
+    fetch("https://toyztore-server.vercel.app/signgleToys", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -52,17 +52,19 @@ const AddASingleToys = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if(data.insertedId){
+        if (data.insertedId) {
           Swal.fire({
             // position: 'top-end',
-            icon: 'success',
-            title: 'Your work has been saved',
-            showConfirmButton: 'Cool',
-            timer: 1500
-          })
+            icon: "success",
+            title: "Your work has been saved",
+            showConfirmButton: "Cool",
+            timer: 1500,
+          });
         }
       });
   };
+
+  setTitleName("Add a toy")
   return (
     <div>
       <form onSubmit={toysHandler} className=" h-auto bg-base-200 mb-5  p-4 ">

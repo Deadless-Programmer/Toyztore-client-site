@@ -1,6 +1,8 @@
 import React from "react";
+import setTitleName from "../hoooks/hooks";
 
 const Blogs = () => {
+  setTitleName('blogs')
   return (
     <div>
       <section className="dark:bg-gray-800 dark:text-gray-100">

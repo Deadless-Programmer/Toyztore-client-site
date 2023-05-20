@@ -13,66 +13,67 @@ import PrivetRoute from "./PrivetRoute";
 import Details from "../Pages/AllToys/Details";
 import UpdateToy from "../Pages/MyAllToys/UpdateToy";
 
-
 const router = createBrowserRouter([
-    {
-        path: '/',
-        element:<Main></Main>,
-        errorElement:<Error></Error>,
-        children:[
-            {
-                path:'/',
-                element:<Home></Home>
-            },
-            {
-                path:"/allToys",
-                element:<AllToys></AllToys>,
-                loader: ()=> fetch("http://localhost:5000/signgleToys")
-            },
-            {
-                path:'/blogs',
-                element:<Blogs></Blogs>
-            },
-            {
-                path:'/login',
-                element:<Login></Login>
-            },
-            {
-                path:'/signUp',
-                element:<SignUp></SignUp>
-            },
-            {
-                path:'/myToys',
-                element: <PrivetRoute><MyAllToys></MyAllToys></PrivetRoute>
-            },
-            {
-                path:'/addAtoys',
-                element:<PrivetRoute><AddASingleToys></AddASingleToys></PrivetRoute>
-            },
-            {
-                path:'/productDetails/:id',
-                element: <PrivetRoute><Details></Details></PrivetRoute> ,
-                loader : ({params})=> fetch(`http://localhost:5000/signgleToys/${params.id}`)
-            },
-            {
-                path:'/updateToy/:id',
-                element:<UpdateToy></UpdateToy>,
-                loader : ({params})=> fetch(`http://localhost:5000/signgleToys/${params.id}`)
-            }
-        ]
-    }
+  {
+    path: "/",
+    element: <Main></Main>,
+    errorElement: <Error></Error>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/allToys",
+        element: <AllToys></AllToys>,
+        loader: () => fetch("https://toyztore-server.vercel.app/signgleToys"),
+      },
+      {
+        path: "/blogs",
+        element: <Blogs></Blogs>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/signUp",
+        element: <SignUp></SignUp>,
+      },
+      {
+        path: "/myToys",
+        element: (
+          <PrivetRoute>
+            <MyAllToys></MyAllToys>
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/addAtoys",
+        element: (
+          <PrivetRoute>
+            <AddASingleToys></AddASingleToys>
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/productDetails/:id",
+        element: (
+          <PrivetRoute>
+            <Details></Details>
+          </PrivetRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`https://toyztore-server.vercel.app/signgleToys/${params.id}`),
+      },
+      {
+        path: "/updateToy/:id",
+        element: <UpdateToy></UpdateToy>,
+        loader: ({ params }) =>
+          fetch(`https://toyztore-server.vercel.app/signgleToys/${params.id}`),
+      },
+    ],
+  },
 ]);
 
-
-
-
-
 export default router;
-
-
-
-
-
-
-
-

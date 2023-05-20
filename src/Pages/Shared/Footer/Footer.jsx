@@ -16,17 +16,17 @@ const Footer = () => {
               <ul className="space-y-1">
                 <li>
                   <a rel="noopener noreferrer" href="#">
-                    Features
+                  Horse
                   </a>
                 </li>
                 <li>
                   <a rel="noopener noreferrer" href="#">
-                    Integrations
+                    Hen
                   </a>
                 </li>
                 <li>
                   <a rel="noopener noreferrer" href="#">
-                    Pricing
+                   Cat
                   </a>
                 </li>
                 <li>

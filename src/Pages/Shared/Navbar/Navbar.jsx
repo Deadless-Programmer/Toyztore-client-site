@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import logo from "../../../assets/onlyLogo.png";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import ActiveLink from "../../ActiveLink/ActiveLink";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const hadleLogOut = () => {
@@ -12,21 +13,21 @@ const Navbar = () => {
   const navItems = (
     <>
       <li className="font-medium">
-        <Link to="/">Home</Link>
+        <ActiveLink to="/">Home</ActiveLink>
       </li>
       <li className="font-medium">
-        <Link to="/allToys">All Toys</Link>
+        <ActiveLink to="/allToys">All Toys</ActiveLink>
       </li>
       <li className="font-medium">
-        <Link to="/blogs">Blogs</Link>
+        <ActiveLink to="/blogs">Blogs</ActiveLink>
       </li>
       {user?.email ? (
         <>
           <li className="font-medium">
-            <Link to="/myToys">My Toys</Link>
+            <ActiveLink to="/myToys">My Toys</ActiveLink>
           </li>
           <li className="font-medium">
-            <Link to="/addAtoys">Add A Toy</Link>
+            <ActiveLink to="/addAtoys">Add A Toy</ActiveLink>
           </li>
           <div>
             <label
@@ -39,12 +40,12 @@ const Navbar = () => {
             </label>
           </div>
           <li className="font-medium">
-            <button onClick={hadleLogOut}>Log Out</button>
+            <ActiveLink><button onClick={hadleLogOut}>Log Out</button></ActiveLink>
           </li>{" "}
         </>
       ) : (
         <li className="font-medium">
-          <Link to="/login">Login</Link>
+          <ActiveLink to="/login">Login</ActiveLink>
         </li>
       )}
     </>

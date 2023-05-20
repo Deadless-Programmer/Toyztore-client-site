@@ -4,12 +4,14 @@ import "react-tabs/style/react-tabs.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
+import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
 const ReactTab = () => {
-  const [categoryTitle, setCategoryTitle] = useState("");
+  const [categoryTitle, setCategoryTitle] = useState("cat");
   const [category, setCategory] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/category/${categoryTitle}`)
+    fetch(`https://toyztore-server.vercel.app/category/${categoryTitle}`)
       .then((res) => res.json())
       .then((data) => setCategory(data));
   }, [categoryTitle]);
@@ -19,7 +21,7 @@ const ReactTab = () => {
     AOS.init();
   }, []);
   return (
-    <div className="mx-auto w-[90%] my-8">
+    <div className="mx-auto w-full my-8">
       <div className="text-center">
         <h1 className="text-3xl font-bold">
           Select And Shop Based On{" "}
@@ -32,14 +34,12 @@ const ReactTab = () => {
           and enjoyable.
         </p>
       </div>
-      <Tabs>
-        <div className="flex justify-center mt-8 ">
-          <TabList classID="">
-            <Tab onClick={() => setCategoryTitle("cat2")}>Cat Toys</Tab>
-            <Tab onClick={() => setCategoryTitle("horse")}>Horse Toys</Tab>
-            <Tab onClick={() => setCategoryTitle("hen")}>Hen Toys</Tab>
-          </TabList>
-        </div>
+      <Tabs className="text-center mt-8 ">
+        <TabList classID="">
+          <Tab onClick={() => setCategoryTitle("cat")}>Cat Toys</Tab>
+          <Tab onClick={() => setCategoryTitle("horse")}>Horse Toys</Tab>
+          <Tab onClick={() => setCategoryTitle("hen")}>Hen Toys</Tab>
+        </TabList>
 
         <div className="mx-auto">
           <TabPanel>
@@ -48,7 +48,7 @@ const ReactTab = () => {
                 <div className="card  card-compact w-80 md:96 mt-5 bg-orange-200 shadow-xl">
                   <figure className="h-56">
                     <img
-                      className="h-screen w-full"
+                      className="h-64 border w-full"
                       src={cData.picture}
                       alt="Shoes"
                     />
@@ -57,17 +57,22 @@ const ReactTab = () => {
                     <h2 className="card-title"> Name: {cData.toyName}</h2>
                     <div className="flex justify-between">
                       <p className="font-semibold"> Price : {cData.Price}</p>
-                      <p className="font-semibold ml-20">
+                      <p className="font-semibold ml-20 flex flex-col items-center">
                         {" "}
-                        Rating : {cData.Rating}
+                        Rating{" "}
+                        <Rating
+                          style={{ maxWidth: 100 }}
+                          value={cData.Rating}
+                          readOnly
+                        />
                       </p>
                     </div>
                     <div className="card-actions justify-center">
-                     <Link to={`/productDetails/${cData._id}`}>
-                     <button className="btn  text-fuchsia-200 bg-pink-600 border-0 hover:bg-green-600">
-                        Veiw Details
-                      </button>
-                     </Link>
+                      <Link to={`/productDetails/${cData._id}`}>
+                        <button className="btn  text-fuchsia-200 bg-pink-600 border-0 hover:bg-green-600">
+                          Veiw Details
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -80,7 +85,7 @@ const ReactTab = () => {
                 <div className="card  card-compact w-80 md:96 mt-5 bg-orange-200 shadow-xl">
                   <figure className="h-56">
                     <img
-                      className="h-screen w-full"
+                      className="h-64 border w-full"
                       src={cData.picture}
                       alt="Shoes"
                     />
@@ -89,17 +94,22 @@ const ReactTab = () => {
                     <h2 className="card-title"> Name: {cData.toyName}</h2>
                     <div className="flex justify-between">
                       <p className="font-semibold"> Price : {cData.Price}</p>
-                      <p className="font-semibold ml-20">
+                      <p className="font-semibold ml-20 flex flex-col items-center">
                         {" "}
-                        Rating : {cData.Rating}
+                        Rating{" "}
+                        <Rating
+                          style={{ maxWidth: 100 }}
+                          value={cData.Rating}
+                          readOnly
+                        />
                       </p>
                     </div>
                     <div className="card-actions justify-center">
-                     <Link to={`/productDetails/${cData._id}`}>
-                     <button className="btn  text-fuchsia-200 bg-pink-600 border-0 hover:bg-green-600">
-                        Veiw Details
-                      </button>
-                     </Link>
+                      <Link to={`/productDetails/${cData._id}`}>
+                        <button className="btn  text-fuchsia-200 bg-pink-600 border-0 hover:bg-green-600">
+                          Veiw Details
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -112,7 +122,7 @@ const ReactTab = () => {
                 <div className="card  card-compact w-80 md:96 mt-5 bg-orange-200 shadow-xl">
                   <figure className="h-56">
                     <img
-                      className="h-screen w-full"
+                      className="h-64 border w-full"
                       src={cData.picture}
                       alt="Shoes"
                     />
@@ -121,17 +131,24 @@ const ReactTab = () => {
                     <h2 className="card-title"> Name: {cData.toyName}</h2>
                     <div className="flex justify-between">
                       <p className="font-semibold"> Price : {cData.Price}</p>
-                      <p className="font-semibold ml-20">
+                      <div className="">
+                      <p className="font-semibold ml-20 flex flex-col items-center">
                         {" "}
-                        Rating : {cData.Rating}
+                        Rating{" "}
+                        <Rating
+                          style={{ maxWidth: 100 }}
+                          value={cData.Rating}
+                          readOnly
+                        />
                       </p>
+                      </div>
                     </div>
                     <div className="card-actions justify-center">
-                     <Link to={`/productDetails/${cData._id}`}>
-                     <button className="btn  text-fuchsia-200 bg-pink-600 border-0 hover:bg-green-600">
-                        Veiw Details
-                      </button>
-                     </Link>
+                      <Link to={`/productDetails/${cData._id}`}>
+                        <button className="btn  text-fuchsia-200 bg-pink-600 border-0 hover:bg-green-600">
+                          Veiw Details
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </div>

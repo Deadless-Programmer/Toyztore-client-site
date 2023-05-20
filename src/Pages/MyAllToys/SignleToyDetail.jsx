@@ -16,7 +16,6 @@ const SignleToyDetail = ({ SingleData, handleDelete }) => {
     Description,
   } = SingleData;
 
-
   // const handleDelete = id=>{
   //     console.log(id)
   //     Swal.fire({
@@ -29,8 +28,8 @@ const SignleToyDetail = ({ SingleData, handleDelete }) => {
   //       confirmButtonText: 'Yes, delete it!'
   //     }).then((result) => {
   //       if (result.isConfirmed) {
-          
-  //         fetch(`http://localhost:5000/signgleToys/${id}`,{
+
+  //         fetch(`https://toyztore-server.vercel.app/signgleToys/${id}`,{
   //           method:"DELETE"
   //         })
   //         .then(res=>res.json())
@@ -51,7 +50,10 @@ const SignleToyDetail = ({ SingleData, handleDelete }) => {
     <tr>
       {/* <th>1</th>  */}
       <td>
-        <button onClick={()=>handleDelete(_id)} className="  hover:bg-green-400 bg-pink-600 p-2 rounded-3xl">
+        <button
+          onClick={() => handleDelete(_id)}
+          className="  hover:bg-green-400 bg-pink-600 p-2 rounded-3xl"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6 text-white"
@@ -76,8 +78,10 @@ const SignleToyDetail = ({ SingleData, handleDelete }) => {
         <img src={picture} className="h-24 w-24 rounded-full" alt="" />
       </td>
       <td>{sellerEmail}</td>
-      <td >
-       <p className="flex items-center">{Rating} <HiStar className="text-orange-400 text-lg"></HiStar></p>
+      <td>
+        <p className="flex items-center">
+          {Rating} <HiStar className="text-orange-400 text-lg"></HiStar>
+        </p>
       </td>
       <td>{Quantity}</td>
       <td>
@@ -85,9 +89,11 @@ const SignleToyDetail = ({ SingleData, handleDelete }) => {
         <p className="w-40  overflow-auto">{Description}</p>{" "}
       </td>
       <td>
-        <Link to={`/updateToy/${_id}`}><button className="bg-pink-500 border-0 hover:bg-green-600 p-2 rounded-sm text-white">
-          Update
-        </button></Link>
+        <Link to={`/updateToy/${_id}`}>
+          <button className="bg-pink-500 border-0 hover:bg-green-600 p-2 rounded-sm text-white">
+            Update
+          </button>
+        </Link>
       </td>
     </tr>
   );

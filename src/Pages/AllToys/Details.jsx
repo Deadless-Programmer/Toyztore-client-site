@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { HiStar } from "react-icons/hi";
+import setTitleName from "../hoooks/hooks";
 const Details = () => {
   const data = useLoaderData();
   console.log(data);
@@ -18,7 +19,7 @@ const Details = () => {
 
   //    const id = useParams();
   //    console.log("Id from details",id)
-
+setTitleName('Product details')
   return (
     <div>
       <div className="hero  bg-orange-200">

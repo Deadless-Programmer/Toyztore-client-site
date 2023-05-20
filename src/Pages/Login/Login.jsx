@@ -4,6 +4,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import setTitleName from "../hoooks/hooks";
 const Login = () => {
   const {signIn, googleSignIn }=useContext(AuthContext);
   const location = useLocation();
@@ -57,6 +58,7 @@ const Login = () => {
         setError(error.message);
       });
     }
+    setTitleName('login')
   return (
     <div className="py-8">
       <ToastContainer />
