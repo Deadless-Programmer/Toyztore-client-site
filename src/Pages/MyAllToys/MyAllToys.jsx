@@ -50,7 +50,7 @@ setTitleName('MyToys')
       <div className="overflow-x-auto min-h-[calc(100vh-228px)]">
       
         <h1 className="text-2xl text-center my-10 font-bold">
-          My Added Toys Are Here
+          My <span className="text-pink-500">Added Toys</span> Are Here
         </h1>
         <div className="text-center my-10 ">
         <button

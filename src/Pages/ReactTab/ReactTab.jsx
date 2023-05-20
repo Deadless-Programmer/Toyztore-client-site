@@ -23,11 +23,11 @@ const ReactTab = () => {
   return (
     <div className="mx-auto w-full my-8">
       <div className="text-center">
-        <h1 className="text-3xl font-bold">
+        <h1 data-aos="fade-up" className="text-3xl font-bold">
           Select And Shop Based On{" "}
           <span className="text-pink-600">Category</span>{" "}
         </h1>
-        <p className="mt-4">
+        <p data-aos="flip-left" className="mt-4">
           Browse through a wide range of products organized into various
           categories. <br /> Choose and shop conveniently based on your
           preferences, making <br /> your online shopping experience efficient
