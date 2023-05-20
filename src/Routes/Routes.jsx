@@ -50,7 +50,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/productDetails/:id',
-                element:<Details></Details>,
+                element: <PrivetRoute><Details></Details></PrivetRoute> ,
                 loader : ({params})=> fetch(`http://localhost:5000/signgleToys/${params.id}`)
             }
         ]
