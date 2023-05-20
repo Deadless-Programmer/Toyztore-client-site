@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const {signIn, googleSignIn }=useContext(AuthContext);
@@ -18,6 +19,15 @@ const Login = () => {
         .then(result=>{
           const user = result.user;
           console.log(user)
+          if(user){
+            Swal.fire({
+              // position: 'top-end',
+              icon: 'success',
+              title: 'User successfully log in',
+              showConfirmButton: 'Cool',
+              timer: 1500
+            })
+          }
           navigete(from, {replace:true})
         })
         .catch(error=> console.log(error));
@@ -30,7 +40,7 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        
+       
         navigete(from, { replace: true });
       })
       .catch((error) => {
@@ -87,6 +97,7 @@ const Login = () => {
               <input
                 type="email"
                 name="email"
+                required
                 id="email"
                 placeholder="yourMail@gmail.com"
                 className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"
@@ -108,6 +119,7 @@ const Login = () => {
               <input
                 type="password"
                 name="password"
+                required
                 id="password"
                 placeholder="*****"
                 className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"
@@ -122,6 +134,7 @@ const Login = () => {
           </button>
         </form>
       </div>
+      
     </div>
   );
 };

@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import SignleToy from "./SignleToy";
 
 const AllToys = () => {
-  const datas = useLoaderData();
+  const Alldatas = useLoaderData();
+  const [serach, setSearch]=useState('');
+  const [datas, setDatas]=useState(Alldatas);
   console.log(datas);
+  const handleSearch =()=>{
+      fetch(`http://localhost:5000/getToyByText/${serach}`)
+      .then(res=> res.json())
+      .then(data=>{
+        setDatas(data)
+      })
+  }
   return (
     <div className="overflow-x-auto min-h-[calc(100vh-228px)]">
       <h1 className="text-2xl text-center mt-5 font-bold">All Toy Here</h1>
@@ -13,10 +22,11 @@ const AllToys = () => {
           <div className="input-group ">
             <input
               type="text"
+              onChange={(e) => setSearch(e.target.value)}
               placeholder="Search…"
               className="input input-bordered"
             />
-            <button className="btn btn-square bg-pink-500 border-0 hover:bg-green-600">
+            <button onClick={handleSearch} className="btn btn-square bg-pink-500 border-0 hover:bg-green-600">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"

@@ -1,13 +1,14 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
-import { ToastContainer, toast } from "react-toastify";
+// import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
 const AddASingleToys = () => {
   const { user } = useContext(AuthContext);
   const toysHandler = (event) => {
     event.preventDefault();
     const form = event.target;
-    const name = form.name.value;
+    const toyName = form.toyName.value;
     const picture = form.picture.value;
     const sellerName = form.sellerName.value;
     const sellerEmail = form.sellerEmail.value;
@@ -18,7 +19,7 @@ const AddASingleToys = () => {
     const Description = form.Description.value;
     // const userEmail = user?.email;
     console.log(
-      name,
+      toyName,
       picture,
       sellerName,
       sellerEmail,
@@ -29,7 +30,7 @@ const AddASingleToys = () => {
       Description
     );
     const newToys = {
-      name,
+      toyName,
       picture,
       sellerName,
       sellerEmail,
@@ -51,8 +52,15 @@ const AddASingleToys = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        toast("Product Successfully Added");
+        if(data.insertedId){
+          Swal.fire({
+            // position: 'top-end',
+            icon: 'success',
+            title: 'Your work has been saved',
+            showConfirmButton: 'Cool',
+            timer: 1500
+          })
+        }
       });
   };
   return (
@@ -66,7 +74,8 @@ const AddASingleToys = () => {
               </label>
               <input
                 type="text"
-                name="name"
+                name="toyName"
+                required
                 placeholder="Name"
                 className="input input-bordered w-72"
               />
@@ -77,6 +86,7 @@ const AddASingleToys = () => {
               </label>
               <input
                 type="text"
+                required
                 name="picture"
                 placeholder="Picture"
                 className="input input-bordered w-72"
@@ -92,6 +102,7 @@ const AddASingleToys = () => {
               </label>
               <input
                 type="text"
+                required
                 name="sellerName"
                 placeholder="Seller Name"
                 className="input input-bordered w-72"
@@ -104,6 +115,7 @@ const AddASingleToys = () => {
               <input
                 defaultValue={user?.email}
                 type="text"
+                required
                 name="sellerEmail"
                 placeholder="Seller Email"
                 className="input input-bordered w-72"
@@ -119,6 +131,7 @@ const AddASingleToys = () => {
               </label>
               <input
                 type="text"
+                required
                 name="SubCategory"
                 placeholder="Sub-category"
                 className="input input-bordered w-72"
@@ -130,6 +143,7 @@ const AddASingleToys = () => {
               </label>
               <input
                 type="text"
+                required
                 name="Price"
                 placeholder="$ Price"
                 className="input input-bordered w-72"
@@ -145,6 +159,7 @@ const AddASingleToys = () => {
               </label>
               <input
                 type="text"
+                required
                 name="Rating"
                 placeholder="Rating"
                 className="input input-bordered w-72"
@@ -156,6 +171,7 @@ const AddASingleToys = () => {
               </label>
               <input
                 type="text"
+                required
                 name="Quantity"
                 placeholder="Available Quantity"
                 className="input input-bordered w-72"
@@ -171,6 +187,7 @@ const AddASingleToys = () => {
             <textarea
               id="bio"
               name="Description"
+              required
               placeholder=""
               className="w-[600px] rounded-lg border-2 h-24  focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900"
             ></textarea>
@@ -179,12 +196,12 @@ const AddASingleToys = () => {
         <div className="flex justify-center ">
           <div className="form-control mt-6 w-[600px]  rounded   ">
             <button className="btn bg-pink-500 border-0 hover:bg-green-600  ">
-              Login
+              Add Toy
             </button>
           </div>
         </div>
       </form>
-      <ToastContainer />
+      {/* <ToastContainer /> */}
     </div>
   );
 };

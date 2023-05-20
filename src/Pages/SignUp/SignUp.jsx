@@ -1,16 +1,16 @@
 import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import Swal from "sweetalert2";
+
 
 const SignUp = () => {
-
-  const {createUser}=useContext(AuthContext);
+  const { createUser } = useContext(AuthContext);
   const location = useLocation();
   const navigete = useNavigate();
-  const from = location.state?.from?.pathname || '/';
+  const from = location.state?.from?.pathname || "/";
 
-
-  const HandleSignUp =(event)=>{
+  const HandleSignUp = (event) => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
@@ -18,16 +18,24 @@ const SignUp = () => {
     const password = form.password.value;
     const photoUrl = form.photo.value;
     console.log(name, email, password, photoUrl);
-    
-    createUser(email, password)
-    .then(result=>{
-      const user = result.user;
-      console.log(user)
-      navigete(from, {replace:true})
-    })
-    .catch(error=> console.log(error))
 
-  }
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        if(user){
+          Swal.fire({
+            // position: 'top-end',
+            icon: 'success',
+            title: 'User successfully create an new account',
+            showConfirmButton: 'Cool',
+            timer: 1500
+          })
+        }
+        navigete(from, { replace: true });
+      })
+      .catch((error) => console.log(error));
+  };
   return (
     <div className="py-8">
       <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 w-96  mx-auto bg-orange-200">
@@ -37,7 +45,8 @@ const SignUp = () => {
             Sign up to access your account
           </p>
         </div>
-        <form onSubmit={HandleSignUp}
+        <form
+          onSubmit={HandleSignUp}
           noValidate=""
           action=""
           className="space-y-12 ng-untouched ng-pristine ng-valid"
@@ -49,6 +58,7 @@ const SignUp = () => {
               </label>
               <input
                 type="name"
+                required
                 name="name"
                 id="name"
                 placeholder="Include Your Name"
@@ -61,6 +71,7 @@ const SignUp = () => {
               </label>
               <input
                 type="email"
+                required
                 name="email"
                 id="email"
                 placeholder="yourMail@gmail.com"
@@ -83,6 +94,7 @@ const SignUp = () => {
               <input
                 type="password"
                 name="password"
+                required
                 id="password"
                 placeholder="*****"
                 className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
@@ -95,6 +107,7 @@ const SignUp = () => {
               <input
                 type="name"
                 name="photo"
+                required
                 placeholder="Include Your Photo URL"
                 className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
               />
@@ -122,6 +135,7 @@ const SignUp = () => {
             </p>
           </div>
         </form>
+       
       </div>
     </div>
   );

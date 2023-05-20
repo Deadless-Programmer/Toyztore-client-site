@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
-import { ToastContainer, toast } from "react-toastify";
+import Swal from "sweetalert2";
+// import { ToastContainer, toast } from "react-toastify";
 const UpdateToy = () => {
   const { user } = useContext(AuthContext);
   const toy = useLoaderData();
@@ -49,7 +50,13 @@ const UpdateToy = () => {
       .then((data) => {
         console.log(data);
         if(data.modifiedCount>0){
-            toast("Info Successfully Updated");
+            Swal.fire({
+                // position: 'top-end',
+                icon: 'success',
+                title: 'Your Info Successfully Update',
+                showConfirmButton: 'Cool',
+                timer: 1500
+              })
         }
        
       });
@@ -65,6 +72,7 @@ const UpdateToy = () => {
               </label>
               <input
                 type="text"
+                required
                 defaultValue={Price}
                 name="Price"
                 placeholder="$ Price"
@@ -77,6 +85,7 @@ const UpdateToy = () => {
               </label>
               <input
                 type="text"
+                required
                 defaultValue={Quantity}
                 name="Quantity"
                 placeholder="Available Quantity"
@@ -92,6 +101,7 @@ const UpdateToy = () => {
             </label>
             <textarea
               id="bio"
+              required
               name="Description"
               placeholder=""
               className="w-[600px] rounded-lg border-2 h-24  focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900"
@@ -106,7 +116,7 @@ const UpdateToy = () => {
           </div>
         </div>
       </form>
-      <ToastContainer />
+      {/* <ToastContainer /> */}
     </div>
   );
 };
