@@ -30,7 +30,7 @@ setTitleName('Product details')
               <h1 className="text-2xl font-bold">Toy name : {name}</h1>
               <p className="mt-2 font-semibold">Seller name : {sellerName}</p>
               <p className="mt-2 font-semibold">Seller email : {sellerEmail}</p>
-              <p className="mt-2 font-semibold">Price : {Price}</p>
+              <p className="mt-2 font-semibold">Price : ${Price}</p>
 
               <p className="mt-2 font-semibold flex items-center gap-1">
                 Rating : {Rating} <HiStar className="text-orange-500"></HiStar>

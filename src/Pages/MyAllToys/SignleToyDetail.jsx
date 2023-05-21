@@ -73,7 +73,7 @@ const SignleToyDetail = ({ SingleData, handleDelete }) => {
       <td>{sellerName}</td>
       <td>{toyName?toyName:"not fount"}</td>
       <td>{SubCategory}</td>
-      <td>{Price}</td>
+      <td>${Price}</td>
       <td>
         <img src={picture} className="h-24 w-24 rounded-full" alt="" />
       </td>
