@@ -56,7 +56,7 @@ const ReactTab = () => {
                   <div className="card-body">
                     <h2 className="card-title"> Name: {cData.toyName}</h2>
                     <div className="flex justify-between">
-                      <p className="font-semibold"> Price : {cData.Price}</p>
+                      <p className="font-semibold"> Price : ${cData.Price}</p>
                       <p className="font-semibold ml-20 flex flex-col items-center">
                         {" "}
                         Rating{" "}
@@ -93,7 +93,7 @@ const ReactTab = () => {
                   <div className="card-body">
                     <h2 className="card-title"> Name: {cData.toyName}</h2>
                     <div className="flex justify-between">
-                      <p className="font-semibold"> Price : {cData.Price}</p>
+                      <p className="font-semibold"> Price : ${cData.Price}</p>
                       <p className="font-semibold ml-20 flex flex-col items-center">
                         {" "}
                         Rating{" "}
@@ -130,7 +130,7 @@ const ReactTab = () => {
                   <div className="card-body">
                     <h2 className="card-title"> Name: {cData.toyName}</h2>
                     <div className="flex justify-between">
-                      <p className="font-semibold"> Price : {cData.Price}</p>
+                      <p className="font-semibold"> Price : ${cData.Price}</p>
                       <p className="font-semibold ml-20 flex flex-col items-center">
                         {" "}
                         Rating{" "}

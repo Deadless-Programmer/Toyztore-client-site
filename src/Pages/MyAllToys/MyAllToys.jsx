@@ -9,7 +9,7 @@ const MyAllToys = () => {
   const [data, setData] = useState([]);
   const [sort, setSort] = useState(0);
 
-  const url = `https://toyztore-server.vercel.app/signgleToy?email=${user?.email}& num=${sort}`;
+  const url = `https://toyztore-server.vercel.app/signgleToy?email=${user?.email}?num=${sort}`;
 
   useEffect(() => {
     fetch(url)

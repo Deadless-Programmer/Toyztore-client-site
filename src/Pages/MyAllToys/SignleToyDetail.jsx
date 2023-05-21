@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 const SignleToyDetail = ({ SingleData, handleDelete }) => {
   const {
     _id,
-    name,
+    toyName,
     picture,
     sellerName,
     sellerEmail,
@@ -15,7 +15,7 @@ const SignleToyDetail = ({ SingleData, handleDelete }) => {
     Quantity,
     Description,
   } = SingleData;
-
+  console.log(SingleData);
   // const handleDelete = id=>{
   //     console.log(id)
   //     Swal.fire({
@@ -71,7 +71,7 @@ const SignleToyDetail = ({ SingleData, handleDelete }) => {
         </button>
       </td>
       <td>{sellerName}</td>
-      <td>{name}</td>
+      <td>{toyName?toyName:"not fount"}</td>
       <td>{SubCategory}</td>
       <td>{Price}</td>
       <td>
