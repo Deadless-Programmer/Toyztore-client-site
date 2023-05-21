@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
   const {signIn, googleSignIn }=useContext(AuthContext);
   const location = useLocation();
@@ -14,11 +15,19 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
-
+        if (email < 1) {
+          toast("Input your valid email");
+          
+          return;
+        } else if (password.length < 6) {
+          toast("Password should have at least 6 character or more");
+          return;
+        }
         signIn(email, password)
         .then(result=>{
           const user = result.user;
           console.log(user)
+          form.reset();
           if(user){
             Swal.fire({
               // position: 'top-end',
@@ -30,7 +39,8 @@ const Login = () => {
           }
           navigete(from, {replace:true})
         })
-        .catch(error=> console.log(error));
+        .catch(error=> {
+          toast("Password does not match")});
 
 
     }
@@ -49,6 +59,7 @@ const Login = () => {
     }
   return (
     <div className="py-8">
+      <ToastContainer />
       <div className="w-96  mx-auto p-4 rounded-md shadow sm:p-8 bg-orange-200">
         <h2 className="mb-3 text-3xl font-semibold text-center">
           Login to your account
@@ -97,7 +108,7 @@ const Login = () => {
               <input
                 type="email"
                 name="email"
-                required
+               
                 id="email"
                 placeholder="yourMail@gmail.com"
                 className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"
@@ -119,7 +130,7 @@ const Login = () => {
               <input
                 type="password"
                 name="password"
-                required
+               
                 id="password"
                 placeholder="*****"
                 className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"

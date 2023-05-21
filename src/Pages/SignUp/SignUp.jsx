@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignUp = () => {
   const { createUser } = useContext(AuthContext);
@@ -18,11 +19,28 @@ const SignUp = () => {
     const password = form.password.value;
     const photoUrl = form.photo.value;
     console.log(name, email, password, photoUrl);
-
+    if (name < 1) {
+      toast("Input your name");
+     
+      return;
+    } else if (email < 1) {
+      toast("Input your valid email");
+      return;
+    } else if (password.length < 6) {
+      toast("Password should have at least 6 character or more");
+      
+      return;
+    }
+    else if(photoUrl.length < 1 ){
+     
+      toast("Include your photo url")
+      return;
+    }
     createUser(email, password)
       .then((result) => {
         const user = result.user;
         console.log(user);
+        form.reset();
         if(user){
           Swal.fire({
             // position: 'top-end',
@@ -34,10 +52,13 @@ const SignUp = () => {
         }
         navigete(from, { replace: true });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        toast("Input valid info")
+      });
   };
   return (
     <div className="py-8">
+        <ToastContainer />
       <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 w-96  mx-auto bg-orange-200">
         <div className="mb-8 text-center">
           <h1 className="my-3 text-4xl font-bold">Sign Up</h1>
@@ -58,7 +79,7 @@ const SignUp = () => {
               </label>
               <input
                 type="name"
-                required
+               
                 name="name"
                 id="name"
                 placeholder="Include Your Name"
@@ -71,7 +92,7 @@ const SignUp = () => {
               </label>
               <input
                 type="email"
-                required
+                
                 name="email"
                 id="email"
                 placeholder="yourMail@gmail.com"
@@ -94,7 +115,7 @@ const SignUp = () => {
               <input
                 type="password"
                 name="password"
-                required
+              
                 id="password"
                 placeholder="*****"
                 className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
@@ -107,7 +128,7 @@ const SignUp = () => {
               <input
                 type="name"
                 name="photo"
-                required
+                
                 placeholder="Include Your Photo URL"
                 className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
               />
